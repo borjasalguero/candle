@@ -62,7 +62,7 @@ window.onload = function() {
 
   // Add listener for tracking change in ambient light
   window.addEventListener("devicelight", function(event) {
-    var lux = event.value; console.log(lux);
+    var lux = event.value;
     // Update light of the candle
     light.style.opacity = lux * 100 / 100000;
     // Update the style!
