@@ -62,15 +62,15 @@ window.onload = function() {
 
   // Add listener for tracking change in ambient light
   window.addEventListener("devicelight", function(event) {
-    var lux = event.value;  
-    var value = lux * 100 / 100000;
+    var lux = event.value;
     // Update light of the candle
-    light.style.opacity = value;
+    light.style.opacity = lux * 100 / 100000;
     // Update the style!
-    if (value > 0.9) {
+    if (lux < 50) {
       mask.classList.add('noFlame');
     } else {
       mask.classList.remove('noFlame');
     }
+    
   });
 };
